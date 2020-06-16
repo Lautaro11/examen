@@ -60,17 +60,19 @@ require_once ('layouts/top.php');
       $url="https://allsportsapi.com/api/football/?&met=Players&playerName=".$name."&APIkey=".$APIkey;
       $json= file_get_contents($url);
       $datos=json_decode($json,true);
+      if (!empty($datos['result'])) {
       $length = count($datos['result']);
       for($i=0;$i<$length;$i++){
-      $playerName = $datos['result'][$i]['player_name'];
-      $playerKey = $datos['result'][$i]['player_key'];
 
-
+          $playerName = $datos['result'][$i]['player_name'];
+          $playerKey = $datos['result'][$i]['player_key'];
   ?>
-      <a href="jugador.php?player=<?php echo $playerKey?>" class="list-group-item list-group-item-action"> <?php echo $playerName; ?></a>
+        <a href="jugador.php?player=<?php echo $playerKey?>" class="list-group-item list-group-item-action"> <?php echo $playerName; ?></a>
 
       <?php
-      }
+    }}else {?>
+        <a href="" class="list-group-item list-group-item-action"> No se encontro a nadie </a>
+    <?php }
     }
   }
  ?>
