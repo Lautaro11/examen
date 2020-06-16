@@ -13,6 +13,7 @@ Si se selecciona el equipo se manda por GET el id del equipo, y ya en equipo.php
 muestra todos los jugadores del equipo y si se selecciona algun jugador muestra sus datos, y fixture que no lo pude desarrollar ya que
 no trae datos fixture.
 
+Si se hace click en Bienvenido al examen de Lautaro Robles es redirigido al index.
 
 Hubo problemas con los datos que habia en las api (fixture estaba vacia), y las conexiones, como que los equipos no tengan un id liga/pais
 ni el nombre de la liga/pais del que estan, la unica manera de conecectar la liga con el pais que encontre fue la desarrollada y ademas 
